@@ -16,7 +16,7 @@
     android:textColor="@color/black"
     android:textSize="25dp"
     android:layout_marginTop="10dp"
-    />
+    tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/namalengkap"
@@ -30,47 +30,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvtambahkan_pelanggan" />
+        app:layout_constraintTop_toBottomOf="@id/tvtambahkan_pelanggan"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/etnama_lengkap"
         android:background="@drawable/rounded"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:hint="   Nama Lengkap"
             app:layout_constraintTop_toBottomOf="@id/namalengkap"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="12dp"/>
+            android:layout_marginStart="20dp"/>
 
     <TextView
         android:id="@+id/alamat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:text="Alamat"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintTop_toBottomOf="@id/etnama_lengkap" />
+        app:layout_constraintTop_toBottomOf="@id/etnama_lengkap"
+        tools:ignore="TextSizeCheck"
+        tools:layout_editor_absoluteX="20dp" />
 
     <EditText
         android:id="@+id/etalamat"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:hint="   Alamat"
         android:background="@drawable/rounded"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/alamat"
-        android:layout_marginStart="12dp"/>
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"/>
 
     <TextView
         android:id="@+id/NoHp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:text="No Hp aktif"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintTop_toBottomOf="@id/etalamat" />
+        app:layout_constraintTop_toBottomOf="@id/etalamat"
+        tools:ignore="TextSizeCheck"
+        tools:layout_editor_absoluteX="20dp" />
 
     <EditText
         android:id="@+id/etNoHp"
@@ -78,8 +85,10 @@
         android:layout_height="50dp"
         android:background="@drawable/rounded"
         android:layout_marginTop="10dp"
+        android:hint="   No Hp aktif"
         app:layout_constraintTop_toBottomOf="@id/NoHp"
-        android:layout_marginStart="12dp"/>
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"/>
 
     <Button
         android:layout_width="250dp"
@@ -88,7 +97,8 @@
         android:gravity="center"
         android:text="SIMPAN"
         app:layout_constraintTop_toBottomOf="@+id/etNoHp"
-        tools:layout_editor_absoluteX="90dp" />
+        tools:layout_editor_absoluteX="90dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
