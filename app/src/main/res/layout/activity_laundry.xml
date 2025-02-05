@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivi">
+    tools:context=".LayananActivity">
 
     <TextView
         android:id="@+id/tvhello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Ega"
+        android:text="Hallo Ega"
         android:textStyle="bold"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
                 android:id="@+id/tvEstimation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Estimasi Hari Ini"
+                android:text="@string/estimasi"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -104,7 +104,7 @@
                         android:id="@+id/tvTransaksi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Transaksi"
+                        android:text="@string/transaksi"
                         android:textSize="14sp"
                         app:layout_constraintTop_toBottomOf="@id/imgTransaksi"
                         app:layout_constraintStart_toStartOf="parent"
@@ -438,7 +438,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Cabang"
+                android:text="Printer"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
