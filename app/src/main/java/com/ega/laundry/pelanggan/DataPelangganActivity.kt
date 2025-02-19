@@ -1,4 +1,4 @@
-package com.example.laundry.Pelanggan
+package com.ega.laundry.pelanggan
 
 import android.annotation.SuppressLint
 import android.content.Intent
