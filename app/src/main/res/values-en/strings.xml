@@ -13,4 +13,8 @@
     <string name="estimasi">Today\'s estimate</string>
     <string name="transaksi">Transaction</string>
     <string name="pegawai">Employee</string>
+    <string name="tambahpegawai">Add Employee</string>
+    <string name="validasi_nama_pelanggan">validate_customer_name</string>
+    <string name="validasi_alamat_pelanggan">validate_customer_address</string>
+    <string name="validasi_nohp_pelanggan">validate_nohp_customer</string>
 </resources>

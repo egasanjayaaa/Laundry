@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,28 +15,13 @@
         android:theme="@style/Theme.Laundry"
         tools:targetApi="31">
         <activity
-            android:name=".CabangActivity"
+            android:name=".TambahLayananActivity"
             android:exported="false" />
         <activity
-            android:name=".PegawaiActivity"
+            android:name=".DataLayananActivity"
             android:exported="false" />
         <activity
-            android:name=".LayananActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AkunActivity"
-            android:exported="false" />
-        <activity
-            android:name=".pelanggan.TambahActivity"
-            android:exported="false" />
-        <activity
-            android:name=".pelanggan.DataPelangganActivity"
-            android:exported="false" />
-        <activity
-            android:name=".laundryisan"
-            android:exported="false" />
-        <activity
-            android:name=".Laundry"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,6 +29,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".pegawai.TambahPegawaiActivity" />
+        <activity android:name=".pegawai.DataPegawaiActivity" />
+        <activity android:name=".pelanggan.TambahPelangganActivity" />
+        <activity android:name=".pelanggan.DataPelangganActivity" />
     </application>
 
 </manifest>

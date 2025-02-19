@@ -17,12 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="#699DC7"
-            android:text="@string/pegawai"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
             android:gravity="center_vertical"
             android:paddingStart="15dp"
-            android:paddingEnd="15dp"/>
+            android:paddingEnd="15dp"
+            android:text="@string/pegawai"
+            android:textColor="#263238"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:layout_width="match_parent"

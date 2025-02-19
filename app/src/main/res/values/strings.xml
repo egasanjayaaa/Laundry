@@ -12,4 +12,8 @@
     <string name="estimasi">Estimasi Hari Ini</string>
     <string name="transaksi">Transaksi</string>
     <string name="pegawai">Pegawai</string>
+    <string name="tambahpegawai">Tambah Pegawai</string>
+    <string name="validasi_nama_pelanggan">validasi_nama_pelanggan</string>
+    <string name="validasi_alamat_pelanggan">validasi_alamat_pelanggan</string>
+    <string name="validasi_nohp_pelanggan">validasi_nohp_pelanggan</string>
 </resources>
