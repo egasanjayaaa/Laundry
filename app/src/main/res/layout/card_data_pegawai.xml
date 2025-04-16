@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cvCARD_PELANGGAN"
+    android:id="@+id/cvCARD_PEGAWAI"
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="4dp"
     android:layout_margin="20dp">
@@ -15,14 +15,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvCARD_PELANGGAN_ID"
+            android:id="@+id/tvCARD_PEGAWAI_ID"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="#699DC7"
             android:gravity="center_vertical"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:text="ID Pelanggan"
+            android:text="ID Pegawai"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             tools:ignore="TextContrastCheck" />
@@ -34,15 +34,15 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvCARD_PELANGGAN_nama"
+                android:id="@+id/tvCARD_PEGAWAI_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Pelanggan"
+                android:text="Nama Pegawai"
                 android:textSize="15sp"
                 android:layout_marginBottom="4dp"/>
 
             <TextView
-                android:id="@+id/tvCARD_PELANGGAN_alamat"
+                android:id="@+id/tvCARD_PEGAWAI_alamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alamat"
@@ -50,7 +50,7 @@
                 android:layout_marginBottom="2dp"/>
 
             <TextView
-                android:id="@+id/tvCARD_PELANGGAN_nohp"
+                android:id="@+id/tvCARD_PEGAWAI_nohp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nomor HP"

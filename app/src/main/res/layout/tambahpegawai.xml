@@ -2,24 +2,25 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/TAMBAH"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pelanggan.TambahPelangganActivity">
 
     <TextView
-        android:id="@+id/tvtambahkan_pelanggan"
+        android:id="@+id/tvtambahkan_pegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="@string/tambahpegawai"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="25dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/namalengkap"
+        android:id="@+id/namalengkappegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
@@ -30,22 +31,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvtambahkan_pelanggan"
+        app:layout_constraintTop_toBottomOf="@id/tvtambahkan_pegawai"
         tools:ignore="TextSizeCheck" />
 
     <EditText
-        android:id="@+id/etnama_lengkap"
+        android:id="@+id/etnama_lengkappegawai"
         android:background="@drawable/rounded"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginEnd="20dp"
-        android:hint="   Nama Lengkap"
-        app:layout_constraintTop_toBottomOf="@id/namalengkap"
+        android:hint="Nama Lengkap"
+        app:layout_constraintTop_toBottomOf="@id/namalengkappegawai"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"/>
+        android:layout_marginStart="20dp"
+        android:paddingLeft="5dp"/>
 
     <TextView
-        android:id="@+id/alamat"
+        android:id="@+id/alamatpegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -53,23 +55,24 @@
         android:text="Alamat"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintTop_toBottomOf="@id/etnama_lengkap"
+        app:layout_constraintTop_toBottomOf="@id/etnama_lengkappegawai"
         tools:ignore="TextSizeCheck"
         tools:layout_editor_absoluteX="20dp" />
 
     <EditText
-        android:id="@+id/etalamat"
+        android:id="@+id/etalamatpegawai"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="   Alamat"
+        android:paddingLeft="5dp"
         android:background="@drawable/rounded"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/alamat"
+        app:layout_constraintTop_toBottomOf="@id/alamatpegawai"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"/>
 
     <TextView
-        android:id="@+id/NoHp"
+        android:id="@+id/NoHppegawai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -77,29 +80,57 @@
         android:text="No Hp aktif"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintTop_toBottomOf="@id/etalamat"
+        app:layout_constraintTop_toBottomOf="@id/etalamatpegawai"
         tools:ignore="TextSizeCheck"
         tools:layout_editor_absoluteX="20dp" />
 
     <EditText
-        android:id="@+id/etNoHp"
+        android:id="@+id/etNoHppegawai"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/rounded"
         android:layout_marginTop="10dp"
         android:hint="   No Hp aktif"
-        app:layout_constraintTop_toBottomOf="@id/NoHp"
+        app:layout_constraintTop_toBottomOf="@id/NoHppegawai"
         android:layout_marginEnd="20dp"
+        android:paddingLeft="5dp"
         android:layout_marginStart="20dp"/>
 
+    <TextView
+        android:id="@+id/cabangpegawai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="21dp"
+        android:text="Cabang"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintTop_toBottomOf="@id/etNoHppegawai"
+        tools:ignore="TextSizeCheck"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <EditText
+        android:id="@+id/etcabangpegawai"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded"
+        android:hint="   Cabang"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/cabangpegawai"
+        tools:layout_editor_absoluteX="20dp" />
+
     <Button
+        android:id="@+id/btsimpanpegawai"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="SIMPAN"
-        app:layout_constraintTop_toBottomOf="@+id/etNoHp"
-        tools:layout_editor_absoluteX="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etcabangpegawai"
         tools:ignore="MissingConstraints" />
 
 

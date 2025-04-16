@@ -1,90 +1,112 @@
 package com.ega.laundry.pelanggan
-
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.database.FirebaseDatabase
 import com.ega.laundry.R
 import com.ega.laundry.modeldata.ModelPelanggan
-import com.google.firebase.database.FirebaseDatabase
 
 class TambahPelangganActivity : AppCompatActivity() {
+    val database = FirebaseDatabase.getInstance()
+    val myRef = database.getReference("pelanggan")
+    lateinit var tvJudul: TextView
+    lateinit var etNama: EditText
+    lateinit var etAlamat: EditText
+    lateinit var etNoHP: EditText
+    lateinit var etCabang: EditText
+    lateinit var btSimpan: Button
 
-    private val database = FirebaseDatabase.getInstance()
-    private val myRef = database.getReference("pelanggan")
-
-    private lateinit var tvJudul: TextView
-    private lateinit var etNama: EditText
-    private lateinit var etAlamat: EditText
-    private lateinit var etNoHP: EditText
-    private lateinit var btSimpan: Button
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tambah_pelanggan) // ✅ Pindahkan sebelum init()
-
-        init() // ✅ Panggil setelah setContentView()
-
-        btSimpan.setOnClickListener {
+        enableEdgeToEdge()
+        setContentView(R.layout.tambah_pelanggan)
+        init()
+        btSimpan.setOnClickListener{
             cekValidasi()
+        }
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
     }
 
-    private fun init() {
+
+    fun init(){
         tvJudul = findViewById(R.id.tvtambahkan_pelanggan)
         etNama = findViewById(R.id.etnama_lengkap)
         etAlamat = findViewById(R.id.etalamat)
         etNoHP = findViewById(R.id.etNoHp)
-        btSimpan = findViewById(R.id.btsimpan)
+        etCabang = findViewById(R.id.etcabang)
+        btSimpan = findViewById(R.id.btsimpanpelanggan)
     }
 
-    private fun cekValidasi() {
-        val nama = etNama.text.toString().trim()
-        val alamat = etAlamat.text.toString().trim()
-        val nohp = etNoHP.text.toString().trim()
+    fun cekValidasi() {
+        val nama = etNama.text.toString()
+        val alamat = etAlamat.text.toString()
+        val noHp = etNoHP.text.toString()
+        val cabang = etCabang.text.toString()
 
         if (nama.isEmpty()) {
-            etNama.error = getString(R.string.validasi_nama_pelanggan)
-            Toast.makeText(this, getString(R.string.validasi_nama_pelanggan), Toast.LENGTH_SHORT).show()
+            etNama.error = this.getString(R.string.validasi_nama_pelanggan)
+            Toast.makeText(this, this.getString(R.string.validasi_nama_pelanggan),Toast.LENGTH_SHORT).show()
             etNama.requestFocus()
             return
         }
-
         if (alamat.isEmpty()) {
-            etAlamat.error = getString(R.string.validasi_alamat_pelanggan)
-            Toast.makeText(this, getString(R.string.validasi_alamat_pelanggan), Toast.LENGTH_SHORT).show()
+            etAlamat.error = this.getString(R.string.validasi_alamat_pelanggan)
+            Toast.makeText(this, this.getString(R.string.validasi_alamat_pelanggan),Toast.LENGTH_SHORT).show()
             etAlamat.requestFocus()
             return
         }
-
-        if (nohp.isEmpty()) {
-            etNoHP.error = getString(R.string.validasi_nohp_pelanggan)
-            Toast.makeText(this, getString(R.string.validasi_nohp_pelanggan), Toast.LENGTH_SHORT).show()
+        if (noHp.isEmpty()) {
+            etNoHP.error = this.getString(R.string.validasi_nohp_pelanggan)
+            Toast.makeText(this, this.getString(R.string.validasi_nohp_pelanggan),Toast.LENGTH_SHORT).show()
             etNoHP.requestFocus()
             return
         }
-
-        simpanData(nama, alamat, nohp)
+        if (cabang.isEmpty()) {
+            etCabang.error = this.getString(R.string.validasi_cabang_pelanggan)
+            Toast.makeText(this, this.getString(R.string.validasi_cabang_pelanggan),Toast.LENGTH_SHORT).show()
+            etCabang.requestFocus()
+            return
+        }
+        simpan()
     }
 
-    private fun simpanData(nama: String, alamat: String, nohp: String) {
+    fun simpan() {
         val pelangganBaru = myRef.push()
-        val pelangganID = pelangganBaru.key ?: ""
-        val data = ModelPelanggan(pelangganID, nama, alamat, nohp)
-
+        val pelangganid = pelangganBaru.key
+        val data = ModelPelanggan(
+            pelangganid.toString(),
+            etNama.text.toString(),
+            etAlamat.text.toString(),
+            etNoHP.text.toString(),
+            etCabang.text.toString(),
+        )
         pelangganBaru.setValue(data)
             .addOnSuccessListener {
-                Toast.makeText(this, "Data berhasil disimpan!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    this.getString(R.string.tambah_pelanggan_sukses),
+                    Toast.LENGTH_SHORT
+                )
                 finish()
             }
-            .addOnFailureListener { error ->
-                Toast.makeText(this, "Gagal menyimpan: ${error.message}", Toast.LENGTH_SHORT).show()
-                Log.e("FirebaseError", "Gagal menyimpan data: ${error.message}")
+            .addOnFailureListener {
+                Toast.makeText(
+                    this,
+                    this.getString(R.string.tambah_pelanggan_gagal),
+                    Toast.LENGTH_SHORT
+                )
             }
     }
 }

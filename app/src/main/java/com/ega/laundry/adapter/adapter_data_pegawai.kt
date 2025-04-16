@@ -10,33 +10,33 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.ega.laundry.R
-import com.ega.laundry.modeldata.ModelPelanggan
+import com.ega.laundry.modeldata.ModelPegawai
 import com.google.firebase.database.DatabaseReference
-import com.ega.laundry.pelanggan.TambahPelangganActivity
+import com.ega.laundry.pegawai.TambahPegawaiActivity
 
-class adapter_data_pelanggan(
-    private val listPelanggan: ArrayList<ModelPelanggan>
-) : RecyclerView.Adapter<adapter_data_pelanggan.ViewHolder>() {
+class adapter_data_pegawai(
+    private val listPegawai: ArrayList<ModelPegawai>
+) : RecyclerView.Adapter<adapter_data_pegawai.ViewHolder>() {
 
     lateinit var appContext: Context
     lateinit var databaseReference: DatabaseReference
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_data_pelanggan, parent, false)
+            .inflate(R.layout.card_data_pegawai, parent, false)
         appContext = parent.context
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val pelanggan = listPelanggan[position]
-        holder.tvCARD_PELANGGAN_ID.text = pelanggan.idPelanggan
-        holder.tvCARD_PELANGGAN_NAMA.text = pelanggan.namaPelanggan
-        holder.tvCARD_PELANGGAN_ALAMAT.text = pelanggan.alamatPelanggan
-        holder.tvCARD_PELANGGAN_NOHP.text = pelanggan.noHPPelanggan
+        val pegawai = listPegawai[position]
+        holder.tvCARD_PEGAWAI_ID.text = pegawai.idPegawai
+        holder.tvCARD_PEGAWAI_NAMA.text = pegawai.namaPegawai
+        holder.tvCARD_PEGAWAI_ALAMAT.text = pegawai.alamatPegawai
+        holder.tvCARD_PEGAWAI_NOHP.text = pegawai.noHPPegawai
 
         // Klik CardView
-        holder.cvCARD_PELANGGAN.setOnClickListener {
+        holder.cvCARD_PEGAWAI.setOnClickListener {
             // Tambahkan aksi ketika card diklik
         }
 
@@ -50,8 +50,8 @@ class adapter_data_pelanggan(
             // Tambahkan aksi ketika tombol "Lihat" diklik
         }
 
-        holder.cvCARD_PELANGGAN.setOnClickListener{
-            val intent = Intent (appContext, TambahPelangganActivity::class.java)
+        holder.cvCARD_PEGAWAI.setOnClickListener{
+            val intent = Intent (appContext, TambahPegawaiActivity::class.java)
             intent.putExtra("judul", "Edit Pelanggan")
             intent.putExtra("idPelanggan", "idPelanggan")
             intent.putExtra("alamatPelanggan", "alamatPelanggan")
@@ -61,15 +61,15 @@ class adapter_data_pelanggan(
     }
 
     override fun getItemCount(): Int {
-        return listPelanggan.size
+        return listPegawai.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvCARD_PELANGGAN_ID: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_ID)
-        val tvCARD_PELANGGAN_NAMA: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_nama)
-        val tvCARD_PELANGGAN_ALAMAT: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_alamat)
-        val tvCARD_PELANGGAN_NOHP: TextView = itemView.findViewById(R.id.tvCARD_PELANGGAN_nohp)
-        val cvCARD_PELANGGAN: CardView = itemView.findViewById(R.id.cvCARD_PELANGGAN)
+        val tvCARD_PEGAWAI_ID: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_ID)
+        val tvCARD_PEGAWAI_NAMA: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_nama)
+        val tvCARD_PEGAWAI_ALAMAT: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_alamat)
+        val tvCARD_PEGAWAI_NOHP: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_nohp)
+        val cvCARD_PEGAWAI: CardView = itemView.findViewById(R.id.cvCARD_PEGAWAI)
         val btnHubungi: Button = itemView.findViewById(R.id.btn_hubungi)
         val btnLihat: Button = itemView.findViewById(R.id.btn_lihat)
     }

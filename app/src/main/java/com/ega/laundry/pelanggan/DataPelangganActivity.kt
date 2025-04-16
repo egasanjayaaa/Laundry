@@ -1,9 +1,7 @@
 package com.ega.laundry.pelanggan
-
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,15 +9,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ega.adapter.adapter_data_pelanggan
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.database.*
 import com.ega.laundry.R
 import com.ega.laundry.modeldata.ModelPelanggan
-import com.ega.laundry.pelanggan.TambahPelangganActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.ega.laundry.adapter.adapter_data_pelanggan
 
 class DataPelangganActivity : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
@@ -70,8 +64,8 @@ class DataPelangganActivity : AppCompatActivity() {
                     pelangganList.clear()
                     for (dataSnapshot in snapshot.children) {
                         val pegawai = dataSnapshot.getValue(ModelPelanggan::class.java)
-                        if (pegawai != null) {  // Cek nullability agar tidak crash
-                            pelangganList.add(pegawai as ModelPelanggan)
+                        if (pegawai != null) {
+                            pelangganList.add(pegawai)
                         }
                     }
                     val adapter = adapter_data_pelanggan(pelangganList)
@@ -83,7 +77,6 @@ class DataPelangganActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@DataPelangganActivity, "Data Gagal Dimuat", Toast.LENGTH_SHORT).show()
             }
-            })
-      }
+        })
+    }
 }
-

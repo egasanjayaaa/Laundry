@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".main">
 
     <TextView
         android:id="@+id/tvhello"
@@ -66,10 +66,12 @@
                 android:textColor="#4CAF50"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:paddingEnd="12dp"
                 app:layout_constraintStart_toEndOf="@id/tvEstimation"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="2dp"
-                android:layout_marginStart="240dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="220dp"
                 tools:ignore="MissingConstraints" />
 
             <!-- Icon Group -->
