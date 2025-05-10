@@ -50,13 +50,14 @@ class adapter_data_pelanggan(
             // Tambahkan aksi ketika tombol "Lihat" diklik
         }
 
-        holder.cvCARD_PELANGGAN.setOnClickListener{
-            val intent = Intent (appContext, TambahPelangganActivity::class.java)
+        holder.cvCARD_PELANGGAN.setOnClickListener {
+            val intent = Intent(appContext, TambahPelangganActivity::class.java)
             intent.putExtra("judul", "Edit Pelanggan")
-            intent.putExtra("idPelanggan", "idPelanggan")
-            intent.putExtra("alamatPelanggan", "alamatPelanggan")
-            intent.putExtra("namapelanggan", "namaPelanggan")
-            intent.putExtra("noHpPelanggan", "noHpPelanggan")
+            intent.putExtra("idPelanggan", pelanggan.idPelanggan)
+            intent.putExtra("alamatPelanggan", pelanggan.alamatPelanggan)
+            intent.putExtra("namaPelanggan", pelanggan.namaPelanggan)
+            intent.putExtra("noHpPelanggan", pelanggan.noHPPelanggan)
+            appContext.startActivity(intent)
         }
     }
 

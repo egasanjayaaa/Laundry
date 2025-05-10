@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">Laundry</string>
     <string name="card_data_pelanggan">ID Pelanggan</string>
-    <string name="card_data_nama">Nama</string>
-    <string name="alamat">Alamat</string>
-    <string name="nohp">No HP</string>
-    <string name="terdaftar">Terdaftar</string>
+    <string name="card_data_nama">Nama :</string>
+    <string name="alamat">Alamat :</string>
+    <string name="nohp">No HP :</string>
+    <string name="terdaftar">Terdaftar :</string>
     <string name="hubungi">Hubungi</string>
     <string name="lihat">Lihat</string>
     <string name="tambahkanpelanggan">Tambah Pelanggan</string>
@@ -46,4 +46,8 @@
     <string name="validasi_nama_layanan">validasi_nama_layanan</string>
     <string name="validasi_harga_layanan">validasi_harga_layanan</string>
     <string name="validasi_cabang_layanan">validasi_cabang_layanan</string>
+    <string name="tambah_pelanggan">Tambah Pelanggan</string>
+    <string name="edit_pelanggan">Edit Pelanggan</string>
+    <string name="edit_pelanggan_sukses">Edit Pelanggan Sukses</string>
+    <string name="edit_pelanggan_gagal">Edit Pelanggan Gagal</string>
 </resources>

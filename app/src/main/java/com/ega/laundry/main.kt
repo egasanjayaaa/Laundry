@@ -9,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.ega.laundry.layanan.DataLayananActivity
 import com.ega.laundry.pelanggan.DataPelangganActivity
+import com.ega.laundry.pegawai.DataPegawaiActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -18,6 +20,8 @@ class main : AppCompatActivity() {
     lateinit var tvservice: TextView
     lateinit var tvdate: TextView
     lateinit var clPelanggan: ConstraintLayout
+    lateinit var clPegawai: ConstraintLayout
+    lateinit var clLayanan: ConstraintLayout
 
 
 
@@ -39,15 +43,21 @@ class main : AppCompatActivity() {
         tvservice = findViewById(R.id.tvservice)
         tvdate = findViewById(R.id.date)
         clPelanggan = findViewById(R.id.clPelanggan)
+        clPegawai = findViewById(R.id.clPegawai)
+        clLayanan = findViewById(R.id.clLayanan)
     }
     fun  berpindah(){
 
-//        clPegawai.setOnClickListener {
-//            val intent = Intent(this, DataPegawaiActivity::class.java)
-//            startActivity(intent)
-//        }
         clPelanggan.setOnClickListener {
             val intent = Intent(this, DataPelangganActivity::class.java)
+            startActivity(intent)
+        }
+        clPegawai.setOnClickListener {
+            val intent = Intent(this, DataPegawaiActivity::class.java)
+            startActivity(intent)
+        }
+        clLayanan.setOnClickListener {
+            val intent = Intent(this, DataLayananActivity::class.java)
             startActivity(intent)
         }
     }
