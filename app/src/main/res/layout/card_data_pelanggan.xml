@@ -125,7 +125,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tvCARD_PELANGGAN_terdaftar"
+                    android:id="@+id/tvCARD_PELANGGAN_cabang"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
@@ -147,7 +147,7 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tvCARD_PELANGGAN_cabang"
+                    android:id="@+id/tvCARD_PELANGGAN_terdaftar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
