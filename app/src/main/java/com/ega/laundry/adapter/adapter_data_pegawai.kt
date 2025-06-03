@@ -1,5 +1,6 @@
 package com.ega.laundry.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -28,6 +29,7 @@ class adapter_data_pegawai(
         return ViewHolder(view)
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pegawai = listPegawai[position]
         holder.tvCARD_PEGAWAI_ID.text = pegawai.idPegawai
@@ -69,6 +71,7 @@ class adapter_data_pegawai(
         val tvCARD_PEGAWAI_NAMA: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_nama)
         val tvCARD_PEGAWAI_ALAMAT: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_alamat)
         val tvCARD_PEGAWAI_NOHP: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_nohp)
+        var tvCARD_PEGAWAI_CABANG: TextView = itemView.findViewById(R.id.tvCARD_PEGAWAI_cabang)
         val cvCARD_PEGAWAI: CardView = itemView.findViewById(R.id.cvCARD_PEGAWAI)
         val btnHubungi: Button = itemView.findViewById(R.id.btn_hubungi)
         val btnLihat: Button = itemView.findViewById(R.id.btn_lihat)

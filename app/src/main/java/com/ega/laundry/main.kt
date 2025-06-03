@@ -10,8 +10,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ega.laundry.layanan.DataLayananActivity
+import com.ega.laundry.modeldata.ModelTambahan
 import com.ega.laundry.pelanggan.DataPelangganActivity
 import com.ega.laundry.pegawai.DataPegawaiActivity
+import com.ega.laundry.transaksi.DataTransaksiActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -22,6 +24,8 @@ class main : AppCompatActivity() {
     lateinit var clPelanggan: ConstraintLayout
     lateinit var clPegawai: ConstraintLayout
     lateinit var clLayanan: ConstraintLayout
+    lateinit var clTransaksi: ConstraintLayout
+    lateinit var clTambahan: ConstraintLayout
 
 
 
@@ -45,6 +49,8 @@ class main : AppCompatActivity() {
         clPelanggan = findViewById(R.id.clPelanggan)
         clPegawai = findViewById(R.id.clPegawai)
         clLayanan = findViewById(R.id.clLayanan)
+        clTambahan = findViewById(R.id.clTambahan)
+        clTransaksi = findViewById(R.id.clTransaksi)
     }
     fun  berpindah(){
 
@@ -58,6 +64,14 @@ class main : AppCompatActivity() {
         }
         clLayanan.setOnClickListener {
             val intent = Intent(this, DataLayananActivity::class.java)
+            startActivity(intent)
+        }
+        clTransaksi.setOnClickListener {
+            val intent = Intent(this, DataTransaksiActivity::class.java)
+            startActivity(intent)
+        }
+        clTambahan.setOnClickListener {
+            val intent = Intent(this, DataTransaksiActivity::class.java)
             startActivity(intent)
         }
     }
