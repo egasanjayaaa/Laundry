@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cvCARD_PEGAWAI"
+    android:id="@+id/cvCARD_PILIH_PELANGGAN"
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="4dp"
     android:layout_margin="20dp">
@@ -25,7 +25,7 @@
             android:layout_marginBottom="4dp">
 
             <TextView
-                android:id="@+id/tvCARD_PEGAWAI_ID"
+                android:id="@+id/tvCARD_PELANGGAN_ID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="[1]"
@@ -63,14 +63,6 @@
                 android:text="Nomor HP             : "
                 android:textSize="15sp"
                 android:layout_marginBottom="4dp" />
-
-            <!-- Tombol Aksi (jika akan ditambahkan nanti) -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

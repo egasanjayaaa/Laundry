@@ -80,4 +80,7 @@
     <string name="PilihMetodePembayaran">Select Payment Method</string>
     <string name="card_alamat">Address Card</string>
     <string name="card_nohp">Card Nohp</string>
+    <string name="ettambahanharga">Additional Price</string>
+    <string name="etnamatambahan">Additional Names</string>
+    <string name="etharga">Price</string>
 </resources>

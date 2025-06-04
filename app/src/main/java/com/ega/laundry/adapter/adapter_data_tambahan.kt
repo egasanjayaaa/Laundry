@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ega.laundry.R
 import com.ega.laundry.modeldata.ModelTambahan
 
-class adapter_data_tambahan (
-    private val listTambahan: ArrayList<ModelTambahan>) :
-    RecyclerView.Adapter<adapter_data_tambahan.ViewHolder>() {
+class adapter_data_tambahan(
+    private val listTambahan: ArrayList<ModelTambahan>,
+    private val onItemClick: (ModelTambahan) -> Unit
+) : RecyclerView.Adapter<adapter_data_tambahan.ViewHolder>() {
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -26,7 +28,9 @@ class adapter_data_tambahan (
         holder.tvCARD_TAMBAHAN_NAMA.text = item.namaTambahan
         holder.tvCARD_TAMBAHAN_HARGA.text = item.hargaTambahan
         holder.tvCARD_TAMBAHAN_CABANG.text = item.cabang
+
         holder.cvCARD_TAMBAHAN.setOnClickListener {
+            onItemClick(item)
         }
     }
 

@@ -1,74 +1,54 @@
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cvCARD_PILIH_LAYANAN"
-    card_view:cardCornerRadius="8dp"
+    card_view:cardCornerRadius="12dp"
+    android:id="@+id/cvCARD_PILIHLAYANAN"
     card_view:cardElevation="4dp"
-    android:layout_margin="20dp">
+    android:layout_margin="5dp"
+    android:layout_marginBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tvCARD_PILIHLAYANAN_ID"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="#699DC7"
+            android:layout_height="35dp"
+            android:background="#BF004C"
             android:gravity="center_vertical"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:layout_marginBottom="4dp">
+            android:paddingStart="12dp"
+            android:textColor="#FFFFFF"
+            android:text="1"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvCARD_LAYANAN_ID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="[1]"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-
+        <!-- Content -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="12dp">
 
             <TextView
+                android:id="@+id/tvCARD_PILIHLAYANAN_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama                 :"
-                android:textSize="15sp" />
+                android:text="Cuci Basah 8kg"
+                android:textStyle="bold"
+                android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvCARD_PILIHLAYANAN_harga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Alamat               :"
-                android:textSize="15sp" />
-
-            <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-                android:id="@+id/tvCARD_LAYANAN_NOHP"
-            android:text="NoHP                 :"
-            android:textSize="15sp" />
-
-            <!-- Tombol Aksi -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-
-            </LinearLayout>
+                android:layout_marginTop="5dp"
+                android:text="Harga : Rp. 25.000" />
         </LinearLayout>
+
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

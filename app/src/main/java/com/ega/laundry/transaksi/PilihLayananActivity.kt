@@ -1,25 +1,24 @@
 package com.ega.laundry.transaksi
 
 import android.annotation.SuppressLint
-import android.graphics.ColorSpace.Model
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.*
-import com.ega.laundry.adapter.adapter_data_layanan
 import com.ega.laundry.R
+import com.ega.laundry.adapter.adapter_data_layanan
 import com.ega.laundry.modeldata.ModelLayanan
-
-//kontol belum selesai
+import com.google.firebase.database.*
 
 class PilihLayananActivity : AppCompatActivity() {
 
@@ -28,7 +27,7 @@ class PilihLayananActivity : AppCompatActivity() {
     private val myRef = database.getReference("layanan")
 
     private lateinit var rvPilihLayanan: RecyclerView
-    private lateinit var searchView: SearchView
+    private lateinit var etSearch: EditText
     private lateinit var tvKosong: TextView
 
     private var idCabang: String = ""
@@ -46,7 +45,7 @@ class PilihLayananActivity : AppCompatActivity() {
 
         tvKosong = findViewById(R.id.tvKosong)
         rvPilihLayanan = findViewById(R.id.rvPILIH_LAYANAN)
-        searchView = findViewById(R.id.searchView)
+        etSearch = findViewById(R.id.etSearch)
 
         listLayanan = ArrayList()
         filteredList = ArrayList()
@@ -56,7 +55,7 @@ class PilihLayananActivity : AppCompatActivity() {
         idCabang = intent.getStringExtra("idCabang") ?: ""
         Log.d(TAG, "idCabang: $idCabang")
 
-        setupSearchView()
+        setupSearchInput()
         getData()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -66,13 +65,14 @@ class PilihLayananActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupSearchView() {
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean = false
+    private fun setupSearchInput() {
+        etSearch.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                filterList(newText)
-                return true
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterList(s.toString())
             }
         })
     }
@@ -87,7 +87,8 @@ class PilihLayananActivity : AppCompatActivity() {
             val searchText = query.lowercase().trim()
             for (layanan in listLayanan) {
                 if (layanan.namalayanan?.lowercase()?.contains(searchText) == true ||
-                    layanan.hargalayanan?.lowercase()?.contains(searchText) == true) {
+                    layanan.hargalayanan?.lowercase()?.contains(searchText) == true
+                ) {
                     filteredList.add(layanan)
                 }
             }
@@ -106,7 +107,7 @@ class PilihLayananActivity : AppCompatActivity() {
             tvKosong.visibility = View.GONE
         }
 
-        adapter = adapter_data_layanan (filteredList)
+        adapter = adapter_data_layanan(filteredList)
         rvPilihLayanan.adapter = adapter
     }
 

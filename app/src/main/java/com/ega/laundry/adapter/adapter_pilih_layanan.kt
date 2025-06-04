@@ -17,7 +17,7 @@ import com.ega.laundry.modeldata.ModelLayanan
 import com.ega.laundry.modeldata.ModelPelanggan
 import com.ega.laundry.transaksi.DataTransaksiActivity
 
-class adapter_pilih_layanan (private val listLayanan: ArrayList<ModelLayanan>) :
+class adapter_pilih_layanan(private val listLayanan: ArrayList<ModelLayanan>) :
     RecyclerView.Adapter<adapter_pilih_layanan.ViewHolder>() {
 
     private val TAG = "adapter_pilih_layanan"
@@ -29,7 +29,7 @@ class adapter_pilih_layanan (private val listLayanan: ArrayList<ModelLayanan>) :
     ): ViewHolder {
         Log.d(TAG, "onCreateViewHolder called")
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_pilih_pelanggan, parent, false)
+            .inflate(R.layout.card_pilih_layanan, parent, false)
         appContext = parent.context
         return ViewHolder(view)
     }
@@ -71,9 +71,9 @@ class adapter_pilih_layanan (private val listLayanan: ArrayList<ModelLayanan>) :
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvID: TextView = itemView.findViewById(R.id.tvCARD_LAYANAN_ID)
-        val tvNama: TextView = itemView.findViewById(R.id.tvCARD_LAYANAN_nama)
-        val tvHarga: TextView = itemView.findViewById(R.id.tvCARD_LAYANAN_harga)
-        val cvCARD: CardView = itemView.findViewById(R.id.cvCARD_PILIH_LAYANAN)
+        val tvID: TextView = itemView.findViewById(R.id.tvCARD_PILIHLAYANAN_ID)
+        val tvNama: TextView = itemView.findViewById(R.id.tvCARD_PILIHLAYANAN_nama)
+        val tvHarga: TextView = itemView.findViewById(R.id.tvCARD_PILIHLAYANAN_harga)
+        val cvCARD: CardView = itemView.findViewById(R.id.cvCARD_PILIHLAYANAN)
     }
 }

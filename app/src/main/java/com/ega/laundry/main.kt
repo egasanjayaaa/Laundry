@@ -13,6 +13,7 @@ import com.ega.laundry.layanan.DataLayananActivity
 import com.ega.laundry.modeldata.ModelTambahan
 import com.ega.laundry.pelanggan.DataPelangganActivity
 import com.ega.laundry.pegawai.DataPegawaiActivity
+import com.ega.laundry.tambahan.DataTambahanActivity
 import com.ega.laundry.transaksi.DataTransaksiActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -71,7 +72,7 @@ class main : AppCompatActivity() {
             startActivity(intent)
         }
         clTambahan.setOnClickListener {
-            val intent = Intent(this, DataTransaksiActivity::class.java)
+            val intent = Intent(this, DataTambahanActivity::class.java)
             startActivity(intent)
         }
     }
