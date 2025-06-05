@@ -28,7 +28,7 @@
             android:name=".layanan.DataLayananActivity"
             android:exported="false" />
         <activity
-            android:name=".laporan.laporan_activity"
+            android:name=".laporan.DataLaporanActivity"
             android:exported="false" />
         <activity
             android:name=".layanan.TambahLayananActivity"
@@ -58,6 +58,9 @@
             android:name=".transaksi.TransaksiActivity"
             android:exported="false" />
         <activity
+            android:name=".cabang.DataCabangActivity"
+            android:exported="false" />
+        <activity
             android:name=".main"
             android:exported="true">
             <intent-filter>
@@ -70,6 +73,7 @@
         <activity android:name=".pegawai.DataPegawaiActivity" />
         <activity android:name=".pelanggan.TambahPelangganActivity" />
         <activity android:name=".pelanggan.DataPelangganActivity" />
+        <activity android:name=".cabang.TambahCabangActivity" />
     </application>
 
 </manifest>

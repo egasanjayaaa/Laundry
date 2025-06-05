@@ -1,3 +1,4 @@
+// File: app/src/main/java/com/ega/laundry/transaksi/PilihLayananTambahanActivity.kt
 package com.ega.laundry.transaksi
 
 import android.annotation.SuppressLint
@@ -40,12 +41,12 @@ class PilihLayananTambahanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_pilih_layanan_tambahan)
+        setContentView(R.layout.activity_pilih_layanan_tambahan) // Referensi ke layout pemilihan layanan tambahan
 
         Log.d(TAG, "Activity created")
 
         tvKosong = findViewById(R.id.tvKosong)
-        rvPilihLayananTambahan = findViewById(R.id.rvPILIH_TAMBAHAN)
+        rvPilihLayananTambahan = findViewById(R.id.rvPILIH_LAYANAN)
         searchView = findViewById(R.id.searchView)
 
         listLayananTambahan = ArrayList()
@@ -116,7 +117,7 @@ class PilihLayananTambahanActivity : AppCompatActivity() {
         val query = if (idCabang.isEmpty()) {
             myRef.limitToLast(100)
         } else {
-            myRef.orderByChild("idCabang").equalTo(idCabang).limitToLast(100)
+            myRef.orderByChild("cabang").equalTo(idCabang).limitToLast(100) // Filtering by 'cabang' field
         }
 
         query.addValueEventListener(object : ValueEventListener {

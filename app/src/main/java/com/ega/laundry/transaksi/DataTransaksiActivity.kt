@@ -120,7 +120,7 @@ class DataTransaksiActivity : AppCompatActivity() {
 
     private fun initViews() {
         tvNamaPelanggan = findViewById(R.id.tvNamaPelanggan)
-        tvNoHp = findViewById(R.id.tvNoHp)
+        tvNoHp = findViewById(R.id.tvNoHpPelanggan)
         tvNamaLayanan = findViewById(R.id.tvNamaLayanan)
         tvHargaLayanan = findViewById(R.id.tvHarga)
         rvLayananTambahan = findViewById(R.id.rvLayananTambahan)

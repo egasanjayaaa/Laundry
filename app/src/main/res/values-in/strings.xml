@@ -83,4 +83,23 @@
     <string name="ettambahanharga">Tambahan Harga</string>
     <string name="etnamatambahan">Nama Tambahan</string>
     <string name="etharga">Harga</string>
+    <string name="StatusberhasildiubahmenjadiSudahDibayar">Status berhasil diubah menjadi sudah dibayar</string>
+    <string name="Laporanberhasildihapus">Laporan berhasil dihapus</string>
+    <string name="Gagalmengupdatestatus">Gagal mengupdate status</string>
+    <string name="Gagalmenghapuslaporan">Gagal menghapus laporan</string>
+    <string name="tambahCabang">Tambah Cabang</string>
+    <string name="text_namalengkap">Nama Lengkap</string>
+    <string name="etcard_alamat">Alamat</string>
+    <string name="delete_branch_title">Hapus Judul Cabang</string>
+    <string name="confirm_delete_branch_message">Konfirmasi Hapus Pesan Cabang</string>
+    <string name="data_load_failed">Pemuatan Data Gagal</string>
+    <string name="delete">Menghapus</string>
+    <string name="branch_deleted_success">Cabang Berhasil Dihapus</string>
+    <string name="branch_delete_failed">Penghapusan Cabang Gagal</string>
+    <string name="cancel">Batal</string>
+    <string name="validasi_nama_cabang">validasi_nama_cabang</string>
+    <string name="validasi_alamat_cabang">validasi_alamat_cabang</string>
+    <string name="validasi_nohp_cabang">validasi_nohp_cabang</string>
+    <string name="tambah_cabang_sukses">tambah_cabang_sukses</string>
+    <string name="tambah_cabang_gagal">tambah_cabang_gagal</string>
 </resources>

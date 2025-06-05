@@ -83,4 +83,23 @@
     <string name="ettambahanharga">Additional Price</string>
     <string name="etnamatambahan">Additional Names</string>
     <string name="etharga">Price</string>
+    <string name="StatusberhasildiubahmenjadiSudahDibayar">Status successfully changed to paid</string>
+    <string name="Laporanberhasildihapus">Report successfully deleted</string>
+    <string name="Gagalmengupdatestatus">Failed to update status</string>
+    <string name="Gagalmenghapuslaporan">Failed to delete report</string>
+    <string name="tambahCabang">Add Branch</string>
+    <string name="text_namalengkap">Nama Lengkap</string>
+    <string name="etcard_alamat">Address</string>
+    <string name="delete_branch_title">Delete Branch Title</string>
+    <string name="confirm_delete_branch_message">Confirm Delete Branch Message</string>
+    <string name="data_load_failed">Data Load Failed</string>
+    <string name="delete">Delete</string>
+    <string name="branch_deleted_success">Branch Deleted Success</string>
+    <string name="branch_delete_failed">Branch Delete Failed</string>
+    <string name="cancel">Cancel</string>
+    <string name="validasi_nama_cabang">validate_branch_name</string>
+    <string name="validasi_alamat_cabang">branch_address_validation</string>
+    <string name="validasi_nohp_cabang">validate_nohp_branch</string>
+    <string name="tambah_cabang_sukses">add_branch_success</string>
+    <string name="tambah_cabang_gagal">add_branch_failed</string>
 </resources>

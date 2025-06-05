@@ -1,3 +1,4 @@
+// File: app/src/main/java/com/ega/laundry/transaksi/PilihPelangganActivity.kt
 package com.ega.laundry.transaksi
 
 import android.os.Bundle
@@ -33,7 +34,7 @@ class PilihPelangganActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pilih_pelanggan)
+        setContentView(R.layout.activity_pilih_pelanggan) // Referensi ke layout pemilihan pelanggan
 
         rvPilihPelanggan = findViewById(R.id.rvPILIH_PELANGGAN)
         etSearch = findViewById(R.id.etSearch)
