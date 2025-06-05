@@ -20,7 +20,7 @@ import com.ega.laundry.transaksi.DataTransaksiActivity
 class adapter_pilih_layanan(private val listLayanan: ArrayList<ModelLayanan>) :
     RecyclerView.Adapter<adapter_pilih_layanan.ViewHolder>() {
 
-    private val TAG = "adapter_pilih_layanan"
+    private val TAG = "AdapterPilihLayanan"
     lateinit var appContext: Context
     lateinit var databaseReference: DatabaseReference
 

@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ega.laundry.R
-import com.ega.laundry.adapter.adapter_data_layanan
+import com.ega.laundry.adapter.adapter_pilih_layanan
 import com.ega.laundry.modeldata.ModelLayanan
 import com.google.firebase.database.*
 
@@ -33,7 +33,7 @@ class PilihLayananActivity : AppCompatActivity() {
     private var idCabang: String = ""
     private lateinit var listLayanan: ArrayList<ModelLayanan>
     private lateinit var filteredList: ArrayList<ModelLayanan>
-    private lateinit var adapter: adapter_data_layanan
+    private lateinit var adapter: adapter_pilih_layanan
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,7 +107,7 @@ class PilihLayananActivity : AppCompatActivity() {
             tvKosong.visibility = View.GONE
         }
 
-        adapter = adapter_data_layanan(filteredList)
+        adapter = adapter_pilih_layanan(filteredList)
         rvPilihLayanan.adapter = adapter
     }
 

@@ -115,7 +115,7 @@ class InvoiceActivity : AppCompatActivity() {
 
         // Additional Services
         tvAdditionalServicesHeader = findViewById(R.id.tv_additional_services_header)
-        rvAdditionalServices = findViewById(R.id.rv_additional_services)
+        tvAdditionalServicesHeader = findViewById(R.id.rv_additional_services)
         tvSubtotalAdditional = findViewById(R.id.tv_subtotal_additional)
 
         // Total
@@ -401,7 +401,7 @@ class InvoiceActivity : AppCompatActivity() {
             append(INIT) // Initialize printer
             append(CENTER)
             append(BOLD_ON)
-            append("MAHSOK LAUNDRY\n")
+            append("SKENA LAUNDRY\n")
             append("SOLO\n")
             append(BOLD_OFF)
             append("================================\n")
