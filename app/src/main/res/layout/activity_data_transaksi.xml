@@ -5,115 +5,121 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF9FF"
+    android:background="?attr/colorBackgroundFloating"
     android:padding="16dp">
 
-    <!-- Scrollable Content -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonLayout"
+        android:layout_marginBottom="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Data Pelanggan -->
             <TextView
                 android:id="@+id/tvDataPelanggan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Data Pelanggan"
+                android:text="@string/DataPelanggan"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/tvNamaPelanggan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Pelanggan:"
-                android:layout_marginTop="8dp" />
+                android:text="@string/nama"
+                android:layout_marginTop="0dp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
 
             <TextView
                 android:id="@+id/tvNoHpPelanggan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No HP:"
-                android:layout_marginTop="4dp" />
+                android:text="@string/etcard_nohp"
+                android:layout_marginTop="4dp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
 
             <Button
                 android:id="@+id/btnPilihPelanggan"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="#7D60B1"
-                android:text="Pilih Pelanggan"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="?attr/colorPrimary"
+                android:text="@string/tambah_pelanggan"
+                android:textColor="?attr/colorOnPrimary"
+                style="@style/Widget.Material3.Button" />
 
-            <!-- Layanan Utama -->
             <TextView
                 android:id="@+id/tvLayananUtama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Layanan Utama"
+                android:text="@string/layananutama"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginTop="32dp" />
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/tvNamaLayanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Layanan:"
-                android:layout_marginTop="8dp" />
+                android:text="@string/namalayanan"
+                android:layout_marginTop="0dp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
 
             <TextView
                 android:id="@+id/tvHarga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Harga:"
-                android:layout_marginTop="4dp" />
+                android:text="@string/harga"
+                android:layout_marginTop="4dp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
 
             <Button
                 android:id="@+id/btnPilihLayanan"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Pilih Layanan"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#7D60B1" />
+                android:text="@string/editlayanan"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorPrimary"
+                style="@style/Widget.Material3.Button" />
 
-            <!-- Layanan Tambahan Label -->
             <TextView
                 android:id="@+id/tvLayananTambahan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Layanan Tambahan"
+                android:text="@string/layanantambahan"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginTop="24dp" />
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLayananTambahan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                 />
+
         </LinearLayout>
     </ScrollView>
 
-    <!-- RecyclerView -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLayananTambahan"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/scrollView"
-        app:layout_constraintBottom_toTopOf="@id/buttonLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Tombol Tambahan & Proses -->
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="0dp"
@@ -132,19 +138,22 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:text="Tambahan"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#4C64E7" />
+            android:text="@string/tambahtambahan"
+            android:textColor="?attr/colorOnSecondary"
+            android:backgroundTint="?attr/colorSecondary"
+            android:layout_marginEnd="4dp"
+            style="@style/Widget.Material3.Button" />
 
         <Button
             android:id="@+id/btnProses"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:text="Proses"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#4CAF50" />
+            android:layout_marginStart="4dp"
+            android:text="@string/transaksi"
+            android:textColor="?attr/colorOnPrimary"
+            android:backgroundTint="?attr/colorPrimary"
+            style="@style/Widget.Material3.Button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

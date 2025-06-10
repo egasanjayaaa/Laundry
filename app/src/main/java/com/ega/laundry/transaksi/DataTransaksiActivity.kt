@@ -139,7 +139,7 @@ class DataTransaksiActivity : AppCompatActivity() {
                 pilihPelanggan -> {
                     idPelanggan = data.getStringExtra("idPelanggan").orEmpty()
                     namaPelanggan = data.getStringExtra("nama").orEmpty()
-                    noHP = data.getStringExtra("noHP").orEmpty()
+                    noHP = data.getStringExtra("nohp").orEmpty()
 
                     tvNamaPelanggan.text = "Nama Pelanggan : $namaPelanggan"
                     tvNoHp.text = "No HP : $noHP"
